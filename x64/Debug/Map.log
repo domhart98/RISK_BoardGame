@@ -1,0 +1,11 @@
+﻿  Cards.cpp
+  GameEngine.cpp
+C:\Users\domin\Documents\COMP 354\Assignment1\Map\Map\GameEngine.cpp(87,70): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\domin\Documents\COMP 354\Assignment1\Map\Map\GameEngine.cpp(222,57): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\domin\Documents\COMP 354\Assignment1\Map\Map\GameEngine.cpp(223,68): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  Map.cpp
+C:\Users\domin\Documents\COMP 354\Assignment1\Map\Map\Map.cpp(372,37): warning C4101: 'e': unreferenced local variable
+  Player.cpp
+  Generating Code...
+C:\Users\domin\Documents\COMP 354\Assignment1\Map\Map\GameEngine.cpp(334): warning C4715: 'GameEngine::validateCommand': not all control paths return a value
+  Map.vcxproj -> C:\Users\domin\Documents\COMP 354\Assignment1\Map\x64\Debug\Map.exe
