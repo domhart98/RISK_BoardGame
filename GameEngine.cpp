@@ -238,13 +238,17 @@ bool GameEngine::validateCommand(Command command) {
 
                         //Distribute new armies amongst player territories
                         while (p->numArmies > 0) {
+                            
+                            cout << "[" << p->name << " turn start]" << endl;
                             cout << "Select one of your territories to place armies." << endl;
+                            cout << "New Armies: " << p->numArmies << endl;
+                            
                             p->toDefend();
 
                             string toDefend;
                             cin >> toDefend;
 
-                            cout << "Player armies: " << p->numArmies << endl;
+                            
                             cout << "How many armies to place here?: ";
 
                             int toPlace;
@@ -264,21 +268,32 @@ bool GameEngine::validateCommand(Command command) {
                        
                         vector<Territory*> possibleTargets =  p->toAttack(); //possibleTargets contains all territories adjacent to player owned teritories
                         vector<Territory*> possibleAttackers;                
+                       
+                        
                         cout << "Select territory to attack: ";
                         
                         string choice;
                         cin >> choice;
 
-                       /* Territory* toAttack;
+                        Territory* toAttack = nullptr;
 
-                        for (Territory* terr : possibleTargets) {
-                            if (choice == terr->name) {
-                                toAttack = terr;
+                        while (toAttack == nullptr) {
+                            for (Territory* terr : possibleTargets) {
+                                if (choice == terr->name) {
+                                    toAttack = terr;
+                                    break;
+                                }
                             }
+                            cout << "Select valid territory to attack: ";
+
+                            string choice;
+                            cin >> choice;
                         }
 
+                        
+
                         for (Territory* terr : p->owned) {
-                            if (mapLoader->map->isAdjacent(terr, toAttack)) {
+                            if (toAttack != nullptr && mapLoader->map->isAdjacent(terr, toAttack)) {
                                 possibleAttackers.push_back(terr);     //possibleAttackers contains each owned territory that is adjacent to the territory being attacked
                             }
                         }
@@ -287,6 +302,7 @@ bool GameEngine::validateCommand(Command command) {
                         for (Territory* terr : possibleAttackers) {
                             cout << terr->name << " " << terr->armyNumber << ", ";
                         }
+
                         cout << endl << "From which territory would you like to attack?: ";
                         cin >> choice;
                         cout << endl << "With how many armies?: ";
@@ -297,7 +313,7 @@ bool GameEngine::validateCommand(Command command) {
                             if (choice == terr->name) {
                                 p->attack(terr, toAttack);
                             }
-                        }*/
+                        }
                     }
                 }
 
