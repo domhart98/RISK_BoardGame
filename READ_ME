@@ -12,3 +12,5 @@ Dominic Hart
 > TODO: - Add user interface
         - Log all commands, actions, results, etc. Export game log at completion of game.
         - Use JS to allow players to connect via WebSockets
+
+> Current Limitations: lack of GUI makes testing labour intensive and time consuming.
